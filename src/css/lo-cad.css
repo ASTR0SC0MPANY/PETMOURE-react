@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  /*aqui é a parte q ta deixando a cor dos icones fixa,ou seja ,tudim preto*/
+  color: var(--text-color-dark);
+}
