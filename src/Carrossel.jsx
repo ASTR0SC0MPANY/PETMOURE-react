@@ -39,6 +39,7 @@ function Carrossel() {
         slidesPerView={slidesPerView}
         pagination={{ clickable: true}}
         navigation
+        autoplay={{ delay: 2000 }} 
       >
         {data.map( (item) => (
           <SwiperSlide key={item.id}>

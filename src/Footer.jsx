@@ -46,7 +46,7 @@ const Footer = () => {
 
         <ul className="footer-list">
           <li>
-            <h3>Meios de Pagamento</h3>
+            <h3>Pagamentos</h3>
           </li>
 
           <li id="pagamentos">
