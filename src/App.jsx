@@ -81,6 +81,7 @@ function BasicExample() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+
             <NavDropdown title="Pets" id="basic-nav-dropdown" className='navbar-nav' >
               <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" onClick={() => window.location.href = '/cachorro'}>Cachorro</NavDropdown.Item>
               <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Gato</NavDropdown.Item>
