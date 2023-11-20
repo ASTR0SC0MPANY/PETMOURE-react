@@ -3,8 +3,11 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHeart, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHeart, faShoppingCart, faSearch, faDog,  faCat, faDove, faMouse, faFish  } from '@fortawesome/free-solid-svg-icons';
+import { GiTurtle, GiRabbit  } from 'react-icons/gi';
 import Container from 'react-bootstrap/Container';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -33,6 +36,26 @@ function BasicExample() {
 
   const roundedButton = {
     borderRadius: '20px', // Defina o valor desejado para arredondar as bordas
+  };
+
+  const dropdownToggleStyle = {
+    border: 'none',
+    borderRadius: '0',
+    boxShadow: 'none',
+    marginRight: '40px', // Ajuste conforme necessário
+    marginLeft: '35px',  // Ajuste conforme necessário
+  };
+
+  const dropdownMenuStyle = {
+    backgroundColor: '#E6E1C8',
+    borderRadius: 0,
+    border: 'none',
+    
+  };
+
+  const iconStyle = {
+    marginRight: '8px', // Ajuste conforme necessário para afastar o ícone do texto
+    color: 'black', // Defina a cor do ícone como preto
   };
 
   return (
@@ -82,47 +105,56 @@ function BasicExample() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
 
-            <NavDropdown title="Pets" id="basic-nav-dropdown" className='navbar-nav' >
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" onClick={() => window.location.href = '/cachorro'}>Cachorro</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Gato</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Peixe</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Hamster</NavDropdown.Item>
-            </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle}>Pets</Dropdown.Toggle>
+            <Dropdown.Menu style={dropdownMenuStyle}>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" onClick={() => window.location.href = '/cachorro'}> <FontAwesomeIcon icon={faDog} style={iconStyle} /> Cachorro</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" onClick={() => window.location.href = '/gato'}> <FontAwesomeIcon icon={faCat} style={iconStyle} />Gato</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3"> <FontAwesomeIcon icon={faDove} style={iconStyle} />Pássaro</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3"> <FontAwesomeIcon icon={faMouse} style={iconStyle} />Hamster</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3"> <FontAwesomeIcon icon={faFish} style={iconStyle} />Peixe</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3"> <GiTurtle style={iconStyle} />Tartaruga</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown"  href="#/action-3"> <GiRabbit style={iconStyle} />Coelho</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-            <NavDropdown title="Farmácia" id="basic-nav-dropdown">
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.1">Cachorro</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Gato</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Peixe</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Hamster</NavDropdown.Item>
-            </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle}>Farmácia</Dropdown.Toggle>
+            <Dropdown.Menu style={dropdownMenuStyle}>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown">Anti-inflamatórios</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-2">Antibióticos</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3">Antipulgas e Carrapatos</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3">Cicatrizante</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3">Analgésicos</Dropdown.Item>
+              <Dropdown.Item id="dropdown-itens" className="animate__animated animate__slideInDown" href="#/action-3">A. Antialérgico</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
-            <NavDropdown title="Banho e Tosa" id="basic-nav-dropdown">
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.1">Banho</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Tosa</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Banho + Tosa</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Reparo</NavDropdown.Item>
-            </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Banho e Tosa</Dropdown.Toggle>
+          </Dropdown>
 
-            <NavDropdown title="Serviços" id="basic-nav-dropdown">
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.1">Cachorro</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Gato</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Peixe</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Hamster</NavDropdown.Item>
-            </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Club</Dropdown.Toggle>
+          </Dropdown>
 
-            <NavDropdown title="Promoções" id="basic-nav-dropdown">
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.1">Cachorro</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.2">Gato</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Peixe</NavDropdown.Item>
-              <NavDropdown.Item id="itens" className="animate__animated animate__slideInDown" href="#action/3.3">Hamster</NavDropdown.Item>
-            </NavDropdown>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Promoções</Dropdown.Toggle>
+          </Dropdown>
 
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Marcas</Dropdown.Toggle>
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Recompra</Dropdown.Toggle>
+          </Dropdown>
+  
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
       </div>
-    
     </div>
   );
 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import HomePage from './HomePage.jsx'
 import Cachorro from './Cachorro.jsx'
+import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
 
 import {
@@ -18,6 +19,10 @@ const router = createBrowserRouter ([
   {
     path: "/cachorro",
     element: <Cachorro />
+  },
+  {
+    path: "/gato",
+    element: <Gato />
   },
   {
     path: "/login",
