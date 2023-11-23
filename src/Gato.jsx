@@ -2,7 +2,6 @@ import React from "react"
 import App from './App.jsx'
 import './index.css'
 import Footer from "./Footer.jsx"
-import ProductGato from "./components/ProductGato.jsx"
 import {register} from 'swiper/element/bundle'
 
 register();
@@ -16,7 +15,6 @@ function Cachorro() {
     return (
     <React.StrictMode>
         <App />
-        <ProductGato />
         <Footer />
     </React.StrictMode>
     );
