@@ -31,7 +31,7 @@ const Footer = () => {
           </li>
 
           <li>
-            <a href="#" className="footer-link">Sobre a PetMoure</a>
+          <a  onClick={() => window.location.href = '/sobre'} className="footer-link">Sobre a PetMoure</a>
           </li>
           <li>
             <a href="#" className="footer-link">Informações Corporativas</a>

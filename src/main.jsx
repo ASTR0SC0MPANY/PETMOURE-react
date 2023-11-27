@@ -5,6 +5,8 @@ import HomePage from './HomePage.jsx'
 import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
+import Sobre from './sobre.jsx'
+
 
 import {
   createBrowserRouter,
@@ -27,6 +29,10 @@ const router = createBrowserRouter ([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/sobre",
+    element: <Sobre />
   },
 
 ])

@@ -93,8 +93,11 @@ function BasicExample() {
   <Button className="icone btn btn-light" style={transparentBackground}>
     <FontAwesomeIcon icon={faHeart} />
       </Button>
+
+      {/*carrinho*/}
       <Button className="icone btn btn-light" style={transparentBackground}>
-      <FontAwesomeIcon icon={faShoppingCart} />
+      <FontAwesomeIcon icon={faShoppingCart} /> 
+       <span className='cart-status'>1</span>
       </Button>
 
       </div>
