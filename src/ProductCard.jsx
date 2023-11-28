@@ -1,16 +1,51 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import React, { useEffect, useState } from 'react';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import './ProductCard.css'
+import Loading from "./components/Loading/Loading";
 
 const ProductCard = () => {
-  const productData = [
-    { id: 1, name: 'Mangueira para Cachorro com Escova Massageadora', price: 'R$69,90', imageUrl: 'Cachorro/Acessórios/A1.png'},
-    { id: 2, name: 'Kit Mordedor Para Cachorro', price: 'R$30,20', imageUrl: 'Cachorro/Brinquedos/B1.png'},
-    { id: 3, name: 'Brinquedo Mordedor Para Cachorro', price: 'R$49,90', imageUrl: 'Cachorro/Brinquedos/B5.png'},
-    { id: 4, name: 'Cama Para Cachorro Grande', price: 'R$179,90', imageUrl: 'Cachorro/Camas/C2.png'},
-    { id: 5, name: 'Coleira De Princesa Para Animais ', price: 'R$59,80', imageUrl: 'Cachorro/Coleiras/cl4.png'},
-    { id: 6, name: 'Pneu Mordedor Resistente', price: 'R$40,10', imageUrl: 'Cachorro/Brinquedos/B12.png'},
-  ];
+  const [info, setInfo] = useState([]);
+  const [loading,setLoading] = useState(false);
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCEWjUIrxiTrxfnG_F83efguvILmOgq5Rg",
+    authDomain: "pet-moure-teste.firebaseapp.com",
+    projectId: "pet-moure-teste",
+    storageBucket: "pet-moure-teste.appspot.com",
+    messagingSenderId: "598417750443",
+    appId: "1:598417750443:web:013acd7db983820199faee",
+    measurementId: "G-CF2KEZP241"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+const collectionRef = collection(db, 'AcessorioCachorro');
+
+useEffect(() => {
+  const fetchTransactions = async () => {
+    try {
+      const querySnapshot = await getDocs(collectionRef);
+      const catList = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        name: doc.data().descricao,
+        price: doc.data().preco,
+        imageUrl: doc.data().urlimage,
+      }));
+      setInfo(catList);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching transactions:', error.message);
+    }
+  };
+
+  fetchTransactions();
+}, [collectionRef]);
+
 
   const productVend = [
     { id: 1, name: 'Coleira Ajustável, WTF, Passeio', price: 'R$28,18', imageUrl: 'Cachorro/Coleiras/cl11.png'},
@@ -65,6 +100,8 @@ const ProductCard = () => {
   };
 
   return (
+   loading ? <Loading/> :  (
+
     <div style={containerStyle}>
       <h2 style={textStyle}>Produtos recomendados</h2>
       <Swiper
@@ -72,7 +109,7 @@ const ProductCard = () => {
         slidesPerView={4}
         navigation
       >
-        {productData.map((product) => (
+        {info.map((product) => (
           <SwiperSlide key={product.id}>
              <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
@@ -81,10 +118,15 @@ const ProductCard = () => {
               <h4 style={priceStyle}>{product.price}</h4>
             </div>
             </button>
+              <button type='button' className="button_add-cart" onClick={() => handleAddToCart(product)}>              
+                <FontAwesomeIcon icon={faCartPlus} />
+              </button>
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Produtos mais vendidos</h2>
+
       <Swiper
         spaceBetween={20}
         slidesPerView={4}
@@ -97,12 +139,16 @@ const ProductCard = () => {
               <img src={product.imageUrl} alt={product.name} />
               <p style={nameStyle}>{product.name}</p>
               <h4 style={priceStyle}>{product.price}</h4>
+               <button type='button' className="button_add-cart">              
+                  <FontAwesomeIcon icon={faCartPlus} />
+                </button>
             </div>
             </button>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
+)
 
   );
 };

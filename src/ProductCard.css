@@ -6,3 +6,29 @@ img {
     height: 200px;
 }
 
+.product-card {
+    position: relative;
+  }
+
+  .product-card:hover .button_add-cart{
+    display: flex;
+  }
+
+.button_add-cart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    margin: 12px 15px;
+    color:blue;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    cursor: pointer;
+}            
+

@@ -19,6 +19,14 @@ import Logo from './logo.png';
 
 function BasicExample() {
 
+  {/* Parte de fazer a barra de pesquisa funcionar*/}
+  const handleSearch = async (event) => {
+    event.preventDefault();
+   
+    const products =await  fetchTransactions();
+    console.log(products)
+  }
+
   const transparentBackground = {
     background: 'transparent',
     border: 'none',
@@ -67,10 +75,10 @@ function BasicExample() {
       </div>
 
       <div className="search-bar">
-      <Form inline="true" id="pesquisa">
+      <Form inline="true" id="pesquisa" onSubmit={handleSearch}>
  <Row>
   <Col xs={12} sm={8} md={10} className='barra'>
-    <Form.Control
+    <Form.Control 
       type="text"
       placeholder="Pesquise na PetMoure"
       className="mr-sm-2"
