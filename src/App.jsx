@@ -16,16 +16,81 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Logo from './logo.png';
+import React, {useState,useContext } from 'react';
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { AppContext } from './context/AppContext';
 
 function BasicExample() {
 
   {/* Parte de fazer a barra de pesquisa funcionar*/}
+
+  {/*oq o chatgpt mandou eu colocar */}
+  const firebaseConfig = {
+    apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
+    authDomain: "teste-f2b52.firebaseapp.com",
+    projectId: "teste-f2b52",
+    storageBucket: "teste-f2b52.appspot.com",
+    messagingSenderId: "593972511162",
+    appId: "1:593972511162:web:3166ce3945fd215de99d83",
+    measurementId: "G-VSM5D92ZYW"
+  };  
+  const firebaseApp = initializeApp(firebaseConfig);
+  const db = getFirestore(firebaseApp);
+  const collectionRef = collection(db, 'AcessorioCachorro');
+
+  const [searchValue, setSearchValue] = useState('');
+  const { info, setInfo } = useContext(AppContext);
+
+  const fetchProducts = async () => {
+    try {
+      const querySnapshot = await getDocs(collectionRef);
+      const products = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        name: doc.data().descricao,
+        price: doc.data().preco,
+        imageUrl: doc.data().urlimage,
+      }));
+
+      setInfo(products);
+    } catch (error) {
+      console.error('Error fetching products:', error.message);
+    }
+  };
+
   const handleSearch = async (event) => {
     event.preventDefault();
-   
-    const products =await  fetchTransactions();
+  
+    try {
+      await fetchProducts();
+      console.log('Dados recuperados:', info);
+  
+      const filteredProducts = info.filter(product =>
+        product.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+  
+      console.log('Produtos filtrados:', filteredProducts);
+  
+      setInfo(filteredProducts);
+      setSearchValue('');
+    } catch (error) {
+      console.error('Error handling search:', error.message);
+    }
+  };
+  
+  
+
+  {/*
+  PARTE DO TUTORIAL
+  const [searchValue,setSearchValue] = useState('');
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    alert('teste');
+
+    const products = await fetchTransactions(searchValue);
     console.log(products)
-  }
+  } */}
 
   const transparentBackground = {
     background: 'transparent',
@@ -82,7 +147,9 @@ function BasicExample() {
       type="text"
       placeholder="Pesquise na PetMoure"
       className="mr-sm-2"
+      onChange={({target}) => setSearchValue(target.value)}
       style={roundedSearchBar}
+      required
     />
   </Col>
   <Col xs={12} sm={4} md={2} className='text-center'>

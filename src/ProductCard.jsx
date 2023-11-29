@@ -1,26 +1,28 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import './ProductCard.css'
 import Loading from "./components/Loading/Loading";
+import { AppContext } from './context/AppContext';
 
 const ProductCard = () => {
-  const [info, setInfo] = useState([]);
-  const [loading,setLoading] = useState(false);
+
+  const { info, setInfo} = useContext(AppContext);
+  const [loading,setLoading] = useState(true);
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCEWjUIrxiTrxfnG_F83efguvILmOgq5Rg",
-    authDomain: "pet-moure-teste.firebaseapp.com",
-    projectId: "pet-moure-teste",
-    storageBucket: "pet-moure-teste.appspot.com",
-    messagingSenderId: "598417750443",
-    appId: "1:598417750443:web:013acd7db983820199faee",
-    measurementId: "G-CF2KEZP241"
-};
+    apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
+    authDomain: "teste-f2b52.firebaseapp.com",
+    projectId: "teste-f2b52",
+    storageBucket: "teste-f2b52.appspot.com",
+    messagingSenderId: "593972511162",
+    appId: "1:593972511162:web:3166ce3945fd215de99d83",
+    measurementId: "G-VSM5D92ZYW"
+  };
 
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
@@ -111,16 +113,14 @@ useEffect(() => {
       >
         {info.map((product) => (
           <SwiperSlide key={product.id}>
-             <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
               <p style={nameStyle}>{product.name}</p>
               <h4 style={priceStyle}>{product.price}</h4>
-            </div>
-            </button>
               <button type='button' className="button_add-cart" onClick={() => handleAddToCart(product)}>              
-                <FontAwesomeIcon icon={faCartPlus} />
-              </button>
+                  <FontAwesomeIcon icon={faCartPlus} />
+             </button>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -134,17 +134,16 @@ useEffect(() => {
       >
         {productVend.map((product) => (
           <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
-            <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-               <button type='button' className="button_add-cart">              
+          <div style={cardStyle} className="product-card">
+            <img src={product.imageUrl} alt={product.name} />
+            <p style={nameStyle}>{product.name}</p>
+            <h4 style={priceStyle}>{product.price}</h4>
+            <button type='button' className="button_add-cart">              
                   <FontAwesomeIcon icon={faCartPlus} />
-                </button>
-            </div>
             </button>
-          </SwiperSlide>
+          </div>
+        </SwiperSlide>
+        
         ))}
       </Swiper>
     </div>
