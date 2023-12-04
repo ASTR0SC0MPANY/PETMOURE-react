@@ -5,6 +5,7 @@ import HomePage from './HomePage.jsx'
 import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
+import Header from './Header.jsx'
 
 import {
   createBrowserRouter,
@@ -28,7 +29,10 @@ const router = createBrowserRouter ([
     path: "/login",
     element: <Login />
   },
-
+  {
+    path: "/header",
+    element: <Header />
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

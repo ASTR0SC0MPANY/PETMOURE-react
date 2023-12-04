@@ -1,6 +1,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import Propaganda from './Propaganda';
 
 const ProductCard = () => {
   const productData = [
@@ -62,18 +63,20 @@ const ProductCard = () => {
     background: 'transparent',
     cursor: 'pointer',
     outline: 'none',
+    width: '400px',
+    height: '450px',
   };
 
   return (
     <div style={containerStyle}>
-      <h2 style={textStyle}>Produtos recomendados</h2>
+      <h2 style={textStyle}>Produtos Recomendados</h2>
       <Swiper
         spaceBetween={20}
         slidesPerView={4}
         navigation
       >
         {productData.map((product) => (
-          <SwiperSlide key={product.id}>
+          <SwiperSlide className='swiper__slide' key={product.id}>
              <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
@@ -84,7 +87,8 @@ const ProductCard = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <h2 style={textStyle}>Produtos mais vendidos</h2>
+      <Propaganda />
+      <h2 style={textStyle}>Produtos Mais Vendidos</h2>
       <Swiper
         spaceBetween={20}
         slidesPerView={4}
