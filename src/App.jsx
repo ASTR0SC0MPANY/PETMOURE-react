@@ -144,11 +144,9 @@ function BasicExample() {
  <Row>
   <Col xs={12} sm={8} md={10} className='barra'>
     <Form.Control 
-      type="text"
+      type="search"
       placeholder="Pesquise na PetMoure"
       className="mr-sm-2"
-      onChange={({target}) => setSearchValue(target.value)}
-      style={roundedSearchBar}
       required
     />
   </Col>

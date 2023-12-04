@@ -7,7 +7,7 @@ import { BsCartDashFill } from "react-icons/bs";
 
 function CartItem({data}) {
 
-  const { urlimage, descricao, price } = data;
+  const { descricao, preco, urlimage  } = data;
   
 
   return (
@@ -20,7 +20,7 @@ function CartItem({data}) {
 
         <div className="cart-item-content">
           <h3 className="cart-item-title">{descricao}</h3>
-          <h3 className="cart-item-price">{price}</h3>
+          <h3 className="cart-item-price">{preco}</h3>
 
           <button
             type="button"
