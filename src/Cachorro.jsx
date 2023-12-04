@@ -2,6 +2,7 @@ import React from "react"
 import App from './App.jsx'
 import './index.css'
 import Footer from "./Footer.jsx"
+import Header from "./Header"
 import ProductCachorro from "./components/ProductCachorro.jsx"
 import {register} from 'swiper/element/bundle'
 
@@ -15,7 +16,7 @@ function Cachorro() {
 
     return (
     <React.StrictMode>
-        <App />
+        <Header />
         <ProductCachorro />
         <Footer />
     </React.StrictMode>

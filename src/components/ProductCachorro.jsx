@@ -122,7 +122,22 @@ const ProductCachorro = () => {
     fontFamily: 'Inter, sans-serif',
     fontWeight: 800,
     color: 'black',
-    margin: '10px'
+    marginRight: '10px',
+    marginLeft: '10px',
+    marginTop: '100px',
+    marginBottom: '10px',
+
+  }
+
+  const acessorio = {
+    fontFamily: 'Inter, sans-serif',
+    fontWeight: 800,
+    color: 'black',
+    marginRight: '10px',
+    marginLeft: '10px',
+    marginTop: '10px',
+    marginBottom: '10px',
+
   }
 
   const containerStyle = {
@@ -134,12 +149,14 @@ const ProductCachorro = () => {
     background: 'transparent',
     cursor: 'pointer',
     outline: 'none',
+    width: '400px',
+    height: '450px',
   };
 
   return (
     <div style={containerStyle}>
-      <h2 style={textStyle}>Acessórios</h2>
-      <Swiper
+      <h2 style={acessorio}>Acessórios</h2>
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
@@ -156,8 +173,9 @@ const ProductCachorro = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Brinquedos</h2>
-      <Swiper
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
@@ -174,8 +192,9 @@ const ProductCachorro = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Camas</h2>
-      <Swiper
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
@@ -192,8 +211,9 @@ const ProductCachorro = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Coleiras</h2>
-      <Swiper
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
@@ -210,8 +230,9 @@ const ProductCachorro = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Ração</h2>
-      <Swiper
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
@@ -228,8 +249,9 @@ const ProductCachorro = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <h2 style={textStyle}>Roupas</h2>
-      <Swiper
+      <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
