@@ -68,7 +68,7 @@ function Header() {
             <button type='button' className='cart__button'>
                 <FaRegHeart />
             </button>
-            <button type='button' className='cart__button'>
+            <button type='button' className='cart__button' onClick={() => window.location.href = '/login'}>
                 <FaRegCircleUser />
             </button>
         </div>

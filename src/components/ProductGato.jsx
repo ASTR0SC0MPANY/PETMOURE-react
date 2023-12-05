@@ -1,22 +1,47 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import React, { useEffect, useState } from 'react';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 const ProductCachorro = () => {
-  const acessorios = [
-    { id: 1, name: 'Mangueira para Cachorro com Escova Massageadora', price: 'R$69,90', imageUrl: 'Cachorro/Acessórios/A1.png'},
-    { id: 2, name: 'Escova de Dente para Pet Dedeiras', price: 'R$38,90', imageUrl: 'Cachorro/Acessórios/A2.png'},
-    { id: 3, name: 'Kit Bandeja Automáticos Azul', price: 'R$85,90', imageUrl: 'Cachorro/Acessórios/A3.png'},
-    { id: 4, name: 'Chalesco Rasqueadeira práticapara Cães', price: 'R$74,80', imageUrl: 'Cachorro/Acessórios/A4.png'},
-    { id: 5, name: 'Comedouro Duplo Pet Bebedouro', price: 'R$51,50', imageUrl: 'Cachorro/Acessórios/A5.png'},
-    { id: 6, name: 'Bandana para Cachorro, Bandana Dupla Face', price: 'R$7,92', imageUrl: 'Cachorro/Acessórios/A6.png'},
-    { id: 7, name: 'Faixa de Natal para Cachorro', price: 'R$10,50', imageUrl: 'Cachorro/Acessórios/A7.png'},
-    { id: 8, name: 'Cachecol de Babador para Cachorro', price: 'R$34,38', imageUrl: 'Cachorro/Acessórios/A8.png'},
-    { id: 9, name: 'Laços para Cachorro', price: 'R$10,80', imageUrl: 'Cachorro/Acessórios/A9.png'},
-    { id: 10, name: 'Laços elásticos para cães, gravata cachorro', price: 'R$25,18', imageUrl: 'Cachorro/Acessórios/A10.png'},
-    { id: 11, name: 'Laço para o cabelo Arcos de Natal para Cachorro', price: 'R$35,80', imageUrl: 'Cachorro/Acessórios/A11.png'},
-    { id: 12, name: 'Topete de Pelo de Cachorro, Lacinhos', price: 'R$41,86', imageUrl: 'Cachorro/Acessórios/A12.png'},
-  ];
+
+   //com banco de dados
+ const [info, setInfo] = useState([]);
+
+ const firebaseConfig = {
+   apiKey: "AIzaSyCEWjUIrxiTrxfnG_F83efguvILmOgq5Rg",
+   authDomain: "pet-moure-teste.firebaseapp.com",
+   projectId: "pet-moure-teste",
+   storageBucket: "pet-moure-teste.appspot.com",
+   messagingSenderId: "598417750443",
+   appId: "1:598417750443:web:013acd7db983820199faee",
+   measurementId: "G-CF2KEZP241"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+const collectionRef = collection(db, 'AreiaGato');
+
+useEffect(() => {
+ const fetchTransactions = async () => {
+   try {
+     const querySnapshot = await getDocs(collectionRef);
+     const catList = querySnapshot.docs.map((doc) => ({
+       id: doc.id,
+       name: doc.data().descricao,
+       price: doc.data().preco,
+       imageUrl: doc.data().urlimage,
+     }));
+     setInfo(catList);
+   } catch (error) {
+     console.error('Error fetching transactions:', error.message);
+   }
+ };
+
+ fetchTransactions();
+}, [collectionRef]);
 
   const brinquedos = [
     { id: 1, name: 'Kit Mordedor para Cachorro', price: 'R$30,20', imageUrl: 'Cachorro/Brinquedos/B1.png'},
@@ -155,13 +180,13 @@ const ProductCachorro = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={acessorio}>Acessórios</h2>
+      <h2 style={acessorio}>Areia</h2>
       <Swiper className="productcard"
         spaceBetween={20}
         slidesPerView={4}
         navigation
       >
-        {acessorios.map((product) => (
+        {info.map((product) => (
           <SwiperSlide key={product.id}>
              <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
