@@ -4,6 +4,7 @@ import './index.css'
 import HomePage from './HomePage.jsx'
 import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
+import ProductDetails from './ProductDetails.jsx'
 import {Login} from './login.jsx'
 
 import {
@@ -27,6 +28,10 @@ const router = createBrowserRouter ([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/product",
+    element: <ProductDetails />
   },
 
 ])

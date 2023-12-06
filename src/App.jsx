@@ -90,7 +90,7 @@ function BasicExample() {
   <FontAwesomeIcon icon={faUser} style={{ marginRight: '5px' }} />
   <span className="entrar-text" onClick={() => window.location.href = '/login'}>Entrar</span>
 </Button>
-  <Button className="icone btn btn-light" style={transparentBackground}>
+  <Button className="icone btn btn-light" onClick={() => window.location.href = '/product'} style={transparentBackground}>
     <FontAwesomeIcon icon={faHeart} />
       </Button>
       <Button className="icone btn btn-light" style={transparentBackground}>

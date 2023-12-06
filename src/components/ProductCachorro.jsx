@@ -146,7 +146,7 @@ const ProductCachorro = () => {
       >
         {acessorios.map((product) => (
           <SwiperSlide key={product.id}>
-             <button style={buttonStyle}>
+             <button style={buttonStyle} onClick={() => window.location.href = '/product'}>
             <div style={cardStyle} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
               <p style={nameStyle}>{product.name}</p>
