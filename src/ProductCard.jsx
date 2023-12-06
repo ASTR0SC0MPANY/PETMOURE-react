@@ -8,23 +8,24 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import './ProductCard.css';
 import { AppContext } from './context/AppContext';
 
-const ProductCard = ({ data }) => {
+const ProductCard = () => {
   const { info, setInfo } = useContext(AppContext);
-  // Função para adicionar um produto ao carrinho
-   const { cartItems, setCartItems } = useContext(AppContext);
+  const { cartItems, setCartItems } = useContext(AppContext);
 
-  const handleAddCart = () => {
-    setCartItems([...cartItems, data]);
+  // Função para adicionar um produto ao carrinho
+  const handleAddCart = (product) => {
+    console.log('Adding to cart:', product);
+    setCartItems((prevCart) => [...prevCart, product]);
   };
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCEWjUIrxiTrxfnG_F83efguvILmOgq5Rg",
-    authDomain: "pet-moure-teste.firebaseapp.com",
-    projectId: "pet-moure-teste",
-    storageBucket: "pet-moure-teste.appspot.com",
-    messagingSenderId: "598417750443",
-    appId: "1:598417750443:web:013acd7db983820199faee",
-    measurementId: "G-CF2KEZP241"
+    apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
+    authDomain: "teste-f2b52.firebaseapp.com",
+    projectId: "teste-f2b52",
+    storageBucket: "teste-f2b52.appspot.com",
+    messagingSenderId: "593972511162",
+    appId: "1:593972511162:web:3166ce3945fd215de99d83",
+    measurementId: "G-VSM5D92ZYW"
   };
 
   const firebaseApp = initializeApp(firebaseConfig);
@@ -36,49 +37,42 @@ const ProductCard = ({ data }) => {
     const fetchTransactions = async () => {
       try {
         const querySnapshot = await getDocs(collectionRef);
-        const catList = querySnapshot.docs.map((doc) => {
-          const { descricao, preco, urlimage } = doc.data();
-          return {
-            id: doc.id,
-            name: descricao,
-            price: preco,
-            imageUrl: urlimage,
-          };
-        }).filter((item) => item !== null);
+        const catList = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().descricao,
+          price: doc.data().preco,
+          imageUrl: doc.data().urlimage,
+        }));
         setInfo(catList);
       } catch (error) {
         console.error('Error fetching transactions:', error.message);
       }
     };
-  
+
     fetchTransactions();
   }, [collectionRef, setInfo]);
 
   // Dados dos produtos mais vendidos
-  // Dados dos produtos mais vendidos
-const collectionRefe = collection(db, 'ColeiraCachorro');
-const [productVend, setProductVend] = useState([]);
-useEffect(() => {
-  const fetchTransactions = async () => {
-    try {
-      const querySnapshot = await getDocs(collectionRefe);
-      const catList = querySnapshot.docs.map((doc) => {
-        const { descricao, preco, urlimage } = doc.data();
-        return {
+  const collectionRefe = collection(db, 'ColeiraCachorro');
+  const [productVend, setProductVend] = useState([]);
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const querySnapshot = await getDocs(collectionRefe);
+        const catList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          name: descricao,
-          price: preco,
-          imageUrl: urlimage,
-        };
-      }).filter((item) => item !== null);
-      setProductVend(catList);  // Aqui, você deve usar setProductVend
-    } catch (error) {
-      console.error('Error fetching transactions:', error.message);
-    }
-  };
+          name: doc.data().descricao,
+          price: doc.data().preco,
+          imageUrl: doc.data().urlimage,
+        }));
+        setProductVend(catList);
+      } catch (error) {
+        console.error('Error fetching transactions:', error.message);
+      }
+    };
 
-  fetchTransactions();
-}, [collectionRefe, setProductVend]);  
+    fetchTransactions();
+  }, [collectionRefe, setProductVend]);
 
   // Estilos
   const cardStyle = {
@@ -118,28 +112,41 @@ useEffect(() => {
   };
 
   // Função para renderizar a lista de itens do carrinho
+  const renderCartItems = () => {
+    return (
+      <div>
+        <h2>Itens do Carrinho</h2>
+        <ul>
+          {cartItems.map((item) => (
+            <li key={item.id}>
+              {item.name} - {item.price}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
 
   // Renderização do componente
   return (
-    <div style={containerStyle}>
-      <h2 style={textStyle}>Produtos recomendados</h2>
-      <Swiper spaceBetween={20} slidesPerView={4} navigation>
-        {info.map((product) => (
-          <SwiperSlide key={product.id}>
-            <div style={cardStyle} className="product-card">
-            <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-              <button
-                type='button'
-                className="button_add-cart"
-                onClick={handleAddCart}
-              >
-                <FontAwesomeIcon icon={faCartPlus} />
-              </button>
-            </div>
-          </SwiperSlide>
-
+      <div style={containerStyle}>
+        <h2 style={textStyle}>Produtos recomendados</h2>
+        <Swiper spaceBetween={20} slidesPerView={4} navigation>
+          {info.map((product) => (
+            <SwiperSlide key={product.id}>
+              <div style={cardStyle} className="product-card">
+                <img src={product.imageUrl} alt={product.name} />
+                <p style={nameStyle}>{product.name}</p>
+                <h4 style={priceStyle}>{product.price}</h4>
+                <button
+                  type='button'
+                  className="button_add-cart"
+                  onClick={() => handleAddCart(product)}
+                >
+                  <FontAwesomeIcon icon={faCartPlus} />
+                </button>
+              </div>
+            </SwiperSlide>
           ))}
         </Swiper>
 
@@ -149,17 +156,13 @@ useEffect(() => {
           {productVend.map((product) => (
             <SwiperSlide key={product.id}>
               <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              {data && (
-                <>
-                  <p style={nameStyle}>{data.name || 'Nome Indisponível'}</p>
-                  <h4 style={priceStyle}>{data.price || 'Preço Indisponível'}</h4>
-                </>
-              )}
+                <img src={product.imageUrl} alt={product.name} />
+                <p style={nameStyle}>{product.name}</p>
+                <h4 style={priceStyle}>{product.price}</h4>
                 <button
                   type='button'
                   className="button_add-cart"
-                  onClick={ handleAddCart }
+                  onClick={() => handleAddCart(product)}
                 >
                   <FontAwesomeIcon icon={faCartPlus} />
                 </button>
@@ -168,7 +171,7 @@ useEffect(() => {
           ))}
         </Swiper>
 
-       
+        {} {/* Renderiza a lista de itens do carrinho */}
       </div>
     )
 };

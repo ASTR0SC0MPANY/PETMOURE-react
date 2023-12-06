@@ -27,13 +27,13 @@ function BasicExample() {
 
   {/*oq o chatgpt mandou eu colocar */}
   const firebaseConfig = {
-    apiKey: "AIzaSyCEWjUIrxiTrxfnG_F83efguvILmOgq5Rg",
-    authDomain: "pet-moure-teste.firebaseapp.com",
-    projectId: "pet-moure-teste",
-    storageBucket: "pet-moure-teste.appspot.com",
-    messagingSenderId: "598417750443",
-    appId: "1:598417750443:web:013acd7db983820199faee",
-    measurementId: "G-CF2KEZP241"
+    apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
+    authDomain: "teste-f2b52.firebaseapp.com",
+    projectId: "teste-f2b52",
+    storageBucket: "teste-f2b52.appspot.com",
+    messagingSenderId: "593972511162",
+    appId: "1:593972511162:web:3166ce3945fd215de99d83",
+    measurementId: "G-VSM5D92ZYW"
   };  
   const firebaseApp = initializeApp(firebaseConfig);
   const db = getFirestore(firebaseApp);
@@ -91,6 +91,9 @@ function BasicExample() {
     const products = await fetchTransactions(searchValue);
     console.log(products)
   } */}
+
+  //ngc do carrinho funcionando
+  const {cartItems} = useContext(AppContext);
 
   const transparentBackground = {
     background: 'transparent',
@@ -170,7 +173,7 @@ function BasicExample() {
       {/*carrinho*/}
       <Button className="icone btn btn-light" style={transparentBackground}>
       <FontAwesomeIcon icon={faShoppingCart} /> 
-       <span className='cart-status'>1</span>
+       <span className='cart-status'>{cartItems.length}</span>
       </Button>
 
       </div>

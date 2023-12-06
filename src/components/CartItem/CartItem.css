@@ -37,3 +37,7 @@
     background: none;
     cursor: pointer;
 }
+
+.cart-item-image{
+    height: 80px;
+}

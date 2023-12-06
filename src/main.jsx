@@ -6,6 +6,7 @@ import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
 import Sobre from './sobre.jsx'
+import Privacidade from './privacidade.jsx'
 
 
 import {
@@ -34,6 +35,11 @@ const router = createBrowserRouter ([
     path: "/sobre",
     element: <Sobre />
   },
+  {
+    path: "/privacidade",
+    element: <Privacidade />
+  },
+
 
 ])
 
