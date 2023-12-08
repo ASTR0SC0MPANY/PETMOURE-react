@@ -107,6 +107,11 @@ img {
   transform: translateY(0);
 }
 
+.dropdown {
+  margin-right: 40px;
+  margin-left: 30px;
+}
+
 #dropdown-basic-button {
   background-color: transparent;
   border: none;
@@ -121,6 +126,7 @@ img {
   color: #556B2F;
   font-family: 'Inter', sans-serif;
   font-weight: 800;
+  margin-right: 400px;
 }
 
 #dropdown-itens {

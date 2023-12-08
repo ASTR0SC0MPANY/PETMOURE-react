@@ -1,0 +1,83 @@
+
+.pix {
+    background-color: beige;
+    text-align: center;
+}
+
+.desconto {
+    color: black;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tudo {
+    background-color: antiquewhite;
+}
+
+.containerh {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.header__dois {
+    background-color: #E6E1C8;
+    width: 100%;
+}
+
+.header__dois > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    background-color: white;
+    margin-top: -50px;
+    width: 100%;
+    max-width: 1400px;
+    justify-content: space-between;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+    gap: 13px;
+    padding-right: 13px;
+    border-radius: 20px;
+}
+
+.search__input {
+    padding: 13px;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 500px;
+    border-right: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.search__button {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.cart__button {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    margin-top: -50px;
+    margin-left: 20px;
+    color: #333;
+}

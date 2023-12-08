@@ -5,6 +5,7 @@ import Carrossel from './Carrossel.jsx'
 import Footer from "./Footer.jsx"
 import ProductCard from './ProductCard.jsx'
 import {register} from 'swiper/element/bundle'
+import Header from "./Header.jsx"
 
 register();
 import 'swiper/css';
@@ -16,7 +17,7 @@ function HomePage() {
 
     return (
     <React.StrictMode>
-        <App />
+        <Header />
         <Carrossel />
         <ProductCard />
         <Footer />
