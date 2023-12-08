@@ -21,6 +21,7 @@ import { getFirestore, collection, query, where, getDocs } from 'firebase/firest
 import { initializeApp } from 'firebase/app';
 import { AppContext } from './context/AppContext';
 
+
 function BasicExample() {
 
   {/* Parte de fazer a barra de pesquisa funcionar*/}
@@ -93,7 +94,7 @@ function BasicExample() {
   } */}
 
   //ngc do carrinho funcionando
-  const {cartItems} = useContext(AppContext);
+  const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
 
   const transparentBackground = {
     background: 'transparent',
@@ -171,9 +172,9 @@ function BasicExample() {
       </Button>
 
       {/*carrinho*/}
-      <Button className="icone btn btn-light" style={transparentBackground}>
+      <Button className="icone btn btn-light" style={transparentBackground} onClick= {() => setIsCartVisible(!isCartVisible) }>
       <FontAwesomeIcon icon={faShoppingCart} /> 
-       <span className='cart-status'>{cartItems.length}</span>
+        {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}
       </Button>
 
       </div>

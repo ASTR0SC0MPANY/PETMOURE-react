@@ -1,6 +1,8 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+// Altere isso em src/components/ProductCachorro.jsx
+import Provider from "../context/Provider.jsx";
 
 const ProductCachorro = () => {
   const acessorios = [
@@ -137,6 +139,7 @@ const ProductCachorro = () => {
   };
 
   return (
+    <Provider>
     <div style={containerStyle}>
       <h2 style={textStyle}>Acessórios</h2>
       <Swiper
@@ -247,6 +250,7 @@ const ProductCachorro = () => {
         ))}
       </Swiper>
     </div>
+    </Provider>
 
   );
 };
