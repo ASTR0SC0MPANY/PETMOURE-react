@@ -136,3 +136,18 @@ img {
 }
 
 
+.cart-status{
+  background-color: rgb(85, 107, 46);
+  width: 15px;
+  height: 15px;
+  position:absolute;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+  margin-left: -10px;
+}
