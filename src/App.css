@@ -3,6 +3,7 @@
 
 .header {
   background-color: #E6E1C8;
+  z-index: 1000;
 }
 
 img {

@@ -29,12 +29,12 @@ function BasicExample() {
   {/*oq o chatgpt mandou eu colocar */}
   const firebaseConfig = {
     apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
-    authDomain: "teste-f2b52.firebaseapp.com",
-    projectId: "teste-f2b52",
-    storageBucket: "teste-f2b52.appspot.com",
-    messagingSenderId: "593972511162",
-    appId: "1:593972511162:web:3166ce3945fd215de99d83",
-    measurementId: "G-VSM5D92ZYW"
+  authDomain: "teste-f2b52.firebaseapp.com",
+  projectId: "teste-f2b52",
+  storageBucket: "teste-f2b52.appspot.com",
+  messagingSenderId: "593972511162",
+  appId: "1:593972511162:web:3166ce3945fd215de99d83",
+  measurementId: "G-VSM5D92ZYW"
   };  
   const firebaseApp = initializeApp(firebaseConfig);
   const db = getFirestore(firebaseApp);

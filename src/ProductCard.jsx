@@ -36,14 +36,14 @@ const ProductCard = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const querySnapshot = await getDocs(collectionRef);
+        const querySnapshot = await getDocs(collectionRefe);
         const catList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           name: doc.data().descricao,
           price: doc.data().preco,
           imageUrl: doc.data().urlimage,
         }));
-        setInfo(catList);
+        setProductVend(catList);
       } catch (error) {
         console.error('Error fetching transactions:', error.message);
       }
@@ -132,7 +132,7 @@ const ProductCard = () => {
       <div style={containerStyle}>
         <h2 style={textStyle}>Produtos recomendados</h2>
         <Swiper spaceBetween={20} slidesPerView={4} navigation>
-          {info.map((product) => (
+          {productVend.map((product) => (
             <SwiperSlide key={product.id}>
               <div style={cardStyle} className="product-card">
                 <img src={product.imageUrl} alt={product.name} />
@@ -158,7 +158,7 @@ const ProductCard = () => {
               <div style={cardStyle} className="product-card">
                 <img src={product.imageUrl} alt={product.name} />
                 <p style={nameStyle}>{product.name}</p>
-                <h4 style={priceStyle}>{product.price}</h4>
+                <h4 style={priceStyle}>R${product.price},00</h4>
                 <button
                   type='button'
                   className="button_add-cart"
