@@ -9,7 +9,6 @@ function Provider({ children }) {
 
     const contextValue = {
        info,
-       
        setInfo,
        cartItems,
        setCartItems,

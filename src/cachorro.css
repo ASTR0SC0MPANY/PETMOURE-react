@@ -1,17 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
-
-img {
-    width: 200px;
-    height: 200px;
-}
-
-.product-card {
-    position: relative;
-  }
-
-  .product-card:hover .button_add-cart{
-    display: flex;
-  }
 
 .button_add-cart {
     position: absolute;
