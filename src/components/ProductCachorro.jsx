@@ -1,6 +1,10 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import '../cachorro.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 const ProductCachorro = () => {
   const acessorios = [
@@ -162,15 +166,19 @@ const ProductCachorro = () => {
         navigation
       >
         {acessorios.map((product) => (
-          <SwiperSlide key={product.id}>
-             <button style={buttonStyle}>
-            <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-            </div>
+        <SwiperSlide key={product.id}>
+        <button style={buttonStyle}>
+          <div style={cardStyle} className="product-card">
+            <img src={product.imageUrl} alt={product.name} />
+            <p style={nameStyle}>{product.name}</p>
+            <h4 style={priceStyle}>{product.price}</h4>
+            {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+            <button type='button' className="button_add-cart">
+              <FontAwesomeIcon icon={faCartPlus} />
             </button>
-          </SwiperSlide>
+          </div>
+        </button>
+      </SwiperSlide>
         ))}
       </Swiper>
 
@@ -182,14 +190,18 @@ const ProductCachorro = () => {
       >
         {brinquedos.map((product) => (
           <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
+          <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
               <p style={nameStyle}>{product.name}</p>
               <h4 style={priceStyle}>{product.price}</h4>
+              {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+              <button type='button' className="button_add-cart">
+                <FontAwesomeIcon icon={faCartPlus} />
+              </button>
             </div>
-            </button>
-          </SwiperSlide>
+          </button>
+        </SwiperSlide>
         ))}
       </Swiper>
 
@@ -200,15 +212,19 @@ const ProductCachorro = () => {
         navigation
       >
         {camas.map((product) => (
-          <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
-            <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-            </div>
-            </button>
-          </SwiperSlide>
+           <SwiperSlide key={product.id}>
+           <button style={buttonStyle}>
+             <div style={cardStyle} className="product-card">
+               <img src={product.imageUrl} alt={product.name} />
+               <p style={nameStyle}>{product.name}</p>
+               <h4 style={priceStyle}>{product.price}</h4>
+               {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+               <button type='button' className="button_add-cart">
+                 <FontAwesomeIcon icon={faCartPlus} />
+               </button>
+             </div>
+           </button>
+         </SwiperSlide>
         ))}
       </Swiper>
 
@@ -219,15 +235,19 @@ const ProductCachorro = () => {
         navigation
       >
         {coleiras.map((product) => (
-          <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
-            <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-            </div>
-            </button>
-          </SwiperSlide>
+           <SwiperSlide key={product.id}>
+           <button style={buttonStyle}>
+             <div style={cardStyle} className="product-card">
+               <img src={product.imageUrl} alt={product.name} />
+               <p style={nameStyle}>{product.name}</p>
+               <h4 style={priceStyle}>{product.price}</h4>
+               {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+               <button type='button' className="button_add-cart">
+                 <FontAwesomeIcon icon={faCartPlus} />
+               </button>
+             </div>
+           </button>
+         </SwiperSlide>
         ))}
       </Swiper>
 
@@ -238,15 +258,19 @@ const ProductCachorro = () => {
         navigation
       >
         {racao.map((product) => (
-          <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
-            <div style={cardStyle} className="product-card">
-              <img src={product.imageUrl} alt={product.name} />
-              <p style={nameStyle}>{product.name}</p>
-              <h4 style={priceStyle}>{product.price}</h4>
-            </div>
-            </button>
-          </SwiperSlide>
+           <SwiperSlide key={product.id}>
+           <button style={buttonStyle}>
+             <div style={cardStyle} className="product-card">
+               <img src={product.imageUrl} alt={product.name} />
+               <p style={nameStyle}>{product.name}</p>
+               <h4 style={priceStyle}>{product.price}</h4>
+               {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+               <button type='button' className="button_add-cart">
+                 <FontAwesomeIcon icon={faCartPlus} />
+               </button>
+             </div>
+           </button>
+         </SwiperSlide>
         ))}
       </Swiper>
 
@@ -258,14 +282,18 @@ const ProductCachorro = () => {
       >
         {roupas.map((product) => (
           <SwiperSlide key={product.id}>
-            <button style={buttonStyle}>
+          <button style={buttonStyle}>
             <div style={cardStyle} className="product-card">
               <img src={product.imageUrl} alt={product.name} />
               <p style={nameStyle}>{product.name}</p>
               <h4 style={priceStyle}>{product.price}</h4>
+              {/* Mova este botão de adicionar ao carrinho para dentro do botão principal */}
+              <button type='button' className="button_add-cart">
+                <FontAwesomeIcon icon={faCartPlus} />
+              </button>
             </div>
-            </button>
-          </SwiperSlide>
+          </button>
+        </SwiperSlide>
         ))}
       </Swiper>
     </div>

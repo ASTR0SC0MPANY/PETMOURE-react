@@ -55,14 +55,27 @@ useEffect(() => {
 }, [collectionRef, setInfo]);
 
 
-  const productVend = [
-    { id: 1, name: 'Coleira Ajustável, WTF, Passeio', price: 'R$28,18', imageUrl: 'Cachorro/Coleiras/cl11.png'},
-    { id: 2, name: 'Coleira para Cachorro Couro', price: 'R$100,00', imageUrl: 'Cachorro/Coleiras/cl12.png'},
-    { id: 3, name: 'Adimax Ração Origens Sabor Frango', price: 'R$60,90', imageUrl: 'Cachorro/Ração/R6.png'},
-    { id: 4, name: 'Moletom Pet Roupa Para Cachorro Bulls', price: 'R$109,00', imageUrl: 'Cachorro/Roupas/RP3.png'},
-    { id: 5, name: 'Brinquedo Nó de Corda', price: 'R$10,00', imageUrl: 'Cachorro/Brinquedos/B8.png'},
-    { id: 6, name: 'Ração Pedigree Para Cães', price: '$R$132,56', imageUrl: 'Cachorro/Ração/R10.png'},
-  ];
+  // Dados dos produtos mais vendidos
+  const collectionRefe = collection(db, 'ColeiraCachorro');
+  const [productVend, setProductVend] = useState([]);
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const querySnapshot = await getDocs(collectionRefe);
+        const catList = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().descricao,
+          price: doc.data().preco,
+          imageUrl: doc.data().urlimage,
+        }));
+        setProductVend(catList);
+      } catch (error) {
+        console.error('Error fetching transactions:', error.message);
+      }
+    };
+
+    fetchTransactions();
+  }, [collectionRefe, setProductVend]);
 
   const cardStyle = {
     background: 'white',

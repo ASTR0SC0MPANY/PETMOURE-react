@@ -14,11 +14,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from './logo.png';
-import { AppContext } from './context/AppContext';
+//import { AppContext } from './context/AppContext';
 
 function Header() {
    //ngc do carrinho funcionando
-   const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
+  // const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
 
       const dropdownToggleStyle = {
         border: 'none',
@@ -67,7 +67,7 @@ function Header() {
 
             <button type='button' className='cart__button' onClick= {() => setIsCartVisible(!isCartVisible) }>
                 <AiOutlineShoppingCart />
-               {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}  
+             {/* {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}  */}  
             </button>
             <button type='button' className='cart__button'>
                 <FaRegHeart />
