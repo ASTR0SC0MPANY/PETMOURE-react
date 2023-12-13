@@ -6,6 +6,13 @@ import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
 import Header from './Header.jsx'
+ //ngc do footer
+ import Sobre from './sobre.jsx'
+ import Privacidade from './privacidade.jsx'
+ import Coorporativas from './coorporativas.jsx'
+ import Politicas from './politicas.jsx'
+
+
 
 import {
   createBrowserRouter,
@@ -33,6 +40,23 @@ const router = createBrowserRouter ([
     path: "/header",
     element: <Header />
   },
+  {
+    path: "/sobre",
+    element: <Sobre />
+  },
+  {
+    path: "/privacidade",
+    element: <Privacidade />
+  },
+  {
+    path: "/coorporativas",
+    element: <Coorporativas/>
+  },
+  {
+    path: "/politicas",
+    element: <Politicas/>
+  },
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

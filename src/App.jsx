@@ -16,12 +16,12 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Logo from './logo.png';
-import { AppContext } from './context/AppContext';
+//import { AppContext } from './context/AppContext';
 
 function BasicExample() {
 
    //ngc do carrinho funcionando
-   const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
+   //const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
 
 
   const transparentBackground = {
@@ -105,7 +105,7 @@ function BasicExample() {
        {/*carrinho*/}
       <Button className="icone btn btn-light" style={transparentBackground} onClick= {() => setIsCartVisible(!isCartVisible) } >
       <FontAwesomeIcon icon={faShoppingCart} />
-        {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}
+      {/*   {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}  */}
       </Button>
 
       </div>

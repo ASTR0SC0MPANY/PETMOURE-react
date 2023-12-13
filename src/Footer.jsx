@@ -31,16 +31,19 @@ const Footer = () => {
           </li>
 
           <li>
-            <a href="#" className="footer-link">Sobre a PetMoure</a>
+          <a  onClick={() => window.location.href = '/sobre'}  className="footer-link">Sobre a PetMoure</a>
           </li>
+
           <li>
-            <a href="#" className="footer-link">Informações Corporativas</a>
+          <a  onClick={() => window.location.href = '/coorporativas'} className="footer-link">Informações Corporativas</a>
           </li>
+         
           <li>
-            <a href="#" className="footer-link">Políticas PetMoure</a>
+          <a  onClick={() => window.location.href = '/politicas'} className="footer-link">Políticas PetMoure</a>
           </li>
+
           <li>
-            <a href="#" className="footer-link">Políticas de Privacidade</a>
+          <a  onClick={() => window.location.href = '/privacidade'} className="footer-link">Políticas de Privacidade</a>
           </li>
         </ul>
 
