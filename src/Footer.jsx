@@ -30,18 +30,26 @@ const Footer = () => {
             <h3>Conheça-nos</h3>
           </li>
 
+          {/*SOBRE */}
           <li>
           <a  onClick={() => window.location.href = '/sobre'} className="footer-link">Sobre a PetMoure</a>
           </li>
+
+           {/*INFORMACOES */}
           <li>
             <a href="#" className="footer-link">Informações Corporativas</a>
           </li>
+
+           {/*POLITICAS PETMOURE */}
           <li>
             <a href="#" className="footer-link">Políticas PetMoure</a>
           </li>
+
+           {/*POLITICAS DE PRIVACIDADE */}
           <li>
-            <a href="#" className="footer-link">Políticas de Privacidade</a>
+          <a  onClick={() => window.location.href = '/privacidade'} className="footer-link">Políticas de Privacidade</a>
           </li>
+
         </ul>
 
         <ul className="footer-list">

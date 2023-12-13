@@ -36,7 +36,7 @@ const ProductCard = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const querySnapshot = await getDocs(collectionRefe);
+        const querySnapshot = await getDocs(collectionRef);
         const catList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           name: doc.data().descricao,
@@ -132,7 +132,7 @@ const ProductCard = () => {
       <div style={containerStyle}>
         <h2 style={textStyle}>Produtos recomendados</h2>
         <Swiper spaceBetween={20} slidesPerView={4} navigation>
-          {productVend.map((product) => (
+          {info.map((product) => (
             <SwiperSlide key={product.id}>
               <div style={cardStyle} className="product-card">
                 <img src={product.imageUrl} alt={product.name} />

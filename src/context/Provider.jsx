@@ -8,7 +8,7 @@ function Provider({ children }) {
     const [isCartVisible, setIsCartVisible] = useState(false);
 
     const contextValue = {
-       info: [],
+       info,
        setInfo,
        cartItems,
        setCartItems,

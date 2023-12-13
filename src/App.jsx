@@ -16,17 +16,16 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Logo from './logo.png';
-import React, {useState,useContext } from 'react';
-import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
+import React, {useState, useContext } from 'react';
+//import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+//import { initializeApp } from 'firebase/app';
 import { AppContext } from './context/AppContext';
-
 
 function BasicExample() {
 
-  {/* Parte de fazer a barra de pesquisa funcionar*/}
-
-  {/*oq o chatgpt mandou eu colocar */}
+  
+{/*
+ 
   const firebaseConfig = {
     apiKey: "AIzaSyCX07aQUmL1Uhue4pM6jQl-zu-oqOZy-50",
   authDomain: "teste-f2b52.firebaseapp.com",
@@ -79,7 +78,7 @@ function BasicExample() {
     }
   };
   
-  
+*/}
 
   {/*
   PARTE DO TUTORIAL
@@ -94,7 +93,7 @@ function BasicExample() {
   } */}
 
   //ngc do carrinho funcionando
-  const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
+ const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
 
   const transparentBackground = {
     background: 'transparent',
@@ -136,7 +135,6 @@ function BasicExample() {
   };
 
   return (
-
     <div className='header'>
       <div className='container-um'>
       <div className="logo-container">
@@ -144,7 +142,7 @@ function BasicExample() {
       </div>
 
       <div className="search-bar">
-      <Form inline="true" id="pesquisa" onSubmit={handleSearch}>
+      <Form inline="true" id="pesquisa" >
  <Row>
   <Col xs={12} sm={8} md={10} className='barra'>
     <Form.Control 
@@ -171,10 +169,10 @@ function BasicExample() {
     <FontAwesomeIcon icon={faHeart} />
       </Button>
 
-      {/*carrinho*/}
-      <Button className="icone btn btn-light" style={transparentBackground} onClick= {() => setIsCartVisible(!isCartVisible) }>
-      <FontAwesomeIcon icon={faShoppingCart} /> 
-        {cartItems.length > 0 && <span className="cart-status" >{cartItems.length}</span>}
+      {/* Carrinho */}
+      <Button className="icone btn btn-light" style={transparentBackground} onClick={() => setIsCartVisible(!isCartVisible)}>
+        <FontAwesomeIcon icon={faShoppingCart} />
+         {cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span>}  
       </Button>
 
       </div>

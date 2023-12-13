@@ -6,7 +6,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 998;
+    z-index: 999;
     padding: 4px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -31,3 +31,4 @@
 .cart--active{
     transform: translate(0,0);
 }
+

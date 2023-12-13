@@ -5,6 +5,7 @@ import Carrossel from './Carrossel.jsx'
 import Footer from "./Footer.jsx"
 import ProductCard from './ProductCard.jsx'
 import Cart from './Cart/Cart.jsx';
+import ProductCachorro from "./components/ProductCachorro.jsx"
 import {register} from 'swiper/element/bundle'
 
 register();
