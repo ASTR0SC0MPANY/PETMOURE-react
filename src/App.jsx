@@ -19,7 +19,7 @@ import Logo from './logo.png';
 import React, {useState, useContext } from 'react';
 //import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 //import { initializeApp } from 'firebase/app';
-import { AppContext } from './context/AppContext';
+//import { AppContext } from './context/AppContext';
 
 function BasicExample() {
 
@@ -93,7 +93,7 @@ function BasicExample() {
   } */}
 
   //ngc do carrinho funcionando
- const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
+ //const {cartItems,isCartVisible, setIsCartVisible} = useContext(AppContext);
 
   const transparentBackground = {
     background: 'transparent',
@@ -172,7 +172,7 @@ function BasicExample() {
       {/* Carrinho */}
       <Button className="icone btn btn-light" style={transparentBackground} onClick={() => setIsCartVisible(!isCartVisible)}>
         <FontAwesomeIcon icon={faShoppingCart} />
-         {cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span>}  
+       {/*  {cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span>}  */} 
       </Button>
 
       </div>
@@ -209,7 +209,7 @@ function BasicExample() {
           </Dropdown>
 
           <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/cachorro'}>Banho e Tosa</Dropdown.Toggle>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/banhoetosa'}>Banho e Tosa</Dropdown.Toggle>
           </Dropdown>
 
           <Dropdown>

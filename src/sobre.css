@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-
-:root{
-
-    --color-primary: #446b2f;
-    --color-secundary: #0c090d;
-    --color-third: #de9e36;
-}
+{/*font-family: 'Roboto', sans-serif; */}
 
 *{
     font-family: 'EB Garamond', serif;
@@ -16,11 +9,11 @@
     letter-spacing: 1px;
     text-decoration: none;
 }
+
 h2{
     font-weight: 800;
-    color: var(--color-primary);
+    color: #446b2f;
     padding: 40px 14rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .informes-texto{
@@ -31,7 +24,7 @@ h2{
 .informes-texto .titulo{
     font-weight: 800;
     display: flex;
-    color: var(--color-primary);
+    color: #446b2f;
 }
 
 .informes{
@@ -40,14 +33,10 @@ h2{
 
 .informes .numero{
     font-weight: 800;
-    color: var(--color-third);
+    color:  #de9e36;
 }
 
 .informes p{
     font-weight: 400;
-    color: var(--color-secundary);
-}
-  
-.container{
-    font-size: 70px;
+    color: #0c090d;
 }

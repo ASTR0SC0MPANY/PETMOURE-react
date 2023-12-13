@@ -7,6 +7,8 @@ import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
 import Sobre from './sobre.jsx'
 import Privacidade from './privacidade.jsx'
+import Coorporativas from './coorporativas.jsx'
+import BanhoeTosa from './banhoetosa.jsx'
 
 
 import {
@@ -38,6 +40,15 @@ const router = createBrowserRouter ([
   {
     path: "/privacidade",
     element: <Privacidade />
+  },
+  {
+    path: "/banhoetosa",
+    element: <BanhoeTosa/>
+  },
+
+  {
+    path: "/coorporativas",
+    element: <Coorporativas/>
   },
 
 
