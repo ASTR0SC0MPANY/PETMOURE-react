@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import HomePage from './HomePage.jsx'
+import BanhoTosa from './banhoetosa.jsx'
 import Cachorro from './Cachorro.jsx'
 import Gato from './Gato.jsx'
 import {Login} from './login.jsx'
@@ -55,6 +56,10 @@ const router = createBrowserRouter ([
   {
     path: "/politicas",
     element: <Politicas/>
+  },
+  {
+    path: "/banhoetosa",
+    element: <BanhoTosa/>
   },
 
 ])
