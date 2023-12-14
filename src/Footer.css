@@ -35,7 +35,7 @@ footer{
 #footer-content{
     background-color: var(--color-neutral-10);
     display: grid;
-    grid-template-columns: repeat(4, 2fr);
+    grid-template-columns: repeat(5, 2fr);
     padding: 3rem 6rem 3rem 5.5rem;
 }
 
@@ -80,6 +80,15 @@ footer{
 #whatsapp{
     background-color: #25d366;
 }
+
+#playstore{
+    background-color: #4b4e4c;
+}
+
+#appstore{
+    background-color: #4b4e4c;
+}
+
 
 .footer-list{
     display: flex;
