@@ -110,7 +110,7 @@ function Header() {
           </Dropdown>
 
           <Dropdown className='dropdown'>
-            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/header'}>Banho e Tosa</Dropdown.Toggle>
+            <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownToggleStyle} onClick={() => window.location.href = '/banhoetosa'}>Banho e Tosa</Dropdown.Toggle>
           </Dropdown>
 
           <Dropdown className='dropdown'>
