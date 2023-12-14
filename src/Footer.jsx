@@ -1,7 +1,7 @@
 
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faWhatsapp, faFacebook, faPaypal, faPix } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faWhatsapp, faFacebook, faPaypal, faPix, faGooglePlay, faAppStore } from '@fortawesome/free-brands-svg-icons';
 
 
 const Footer = () => {
@@ -69,6 +69,21 @@ const Footer = () => {
             <p>Telefone: (85) 98885-0079</p>
           </div>
         </div>
+
+        <div id="footer-download">
+          <h3>Download</h3>
+
+          <div id='footer-social-media'>
+            <a href='#' className='footer-link' id='playstore'>
+              <FontAwesomeIcon icon={faGooglePlay} />
+            </a>
+            <a href='#' className='footer-link' id='appstore'>
+              <FontAwesomeIcon icon={faAppStore} />
+            </a>
+          </div>
+        </div>
+        
+
       </div>
 
       <div id="footer-copyright">
