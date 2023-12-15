@@ -94,6 +94,9 @@ function BasicExample() {
   </Form>
       </div>
 
+      <h2 className="oi">oi</h2>
+      <h2>da certo em nome de Jesus</h2>
+
      <Button className='login-cadastro' variant="light" style={roundedButton}>
   <FontAwesomeIcon icon={faUser} style={{ marginRight: '5px' }} />
   <span className="entrar-text" onClick={() => window.location.href = '/login'}>Entrar</span>
