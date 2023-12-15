@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@300&family=Red+Hat+Display:wght@300;700&display=swap');
+:root{
+
+    --color-primary: #446b2f;
+    --color-secundary: #0c090d;
+    --color-third: #de9e36;
+}
+
+*{
+    font-family: 'EB Garamond', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.informes-texto h2{
+    font-weight: 800;
+    color: var(--color-primary);
+    padding: 40px 14rem;
+}
+
+.informes-texto{
+    padding: 10px 14rem;
+    text-align: justify;
+}
+
+.informes-texto .titulo{
+    font-weight: 800;
+    display: flex;
+    color: var(--color-primary);
+}
+
+.informes{
+    padding: .5rem 3rem;
+}
+
+.informes .numero{
+    font-weight: 800;
+    color: var(--color-third);
+}
+
+.informes p{
+    font-weight: 400;
+    color: var(--color-secundary);
+}

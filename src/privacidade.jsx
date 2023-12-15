@@ -46,12 +46,12 @@ function privacidade(){
 
 <div className="informes">
 
-                <p className="numero" id="1.2">1.2 Informações de Compra: </p>
-                <p>Ao efetuar uma compra, podemos coletar informações de pagamento, endereço de entrega e detalhes dos produtos </p>
+        <p className="numero" id="1.2">1.2 Informações de Compra: </p>
+        <p>Ao efetuar uma compra, podemos coletar informações de pagamento, endereço de entrega e detalhes dos produtos </p>
 
-            </div>
+</div>
 
-            <div className="informes">
+    <div className="informes">
 
 <p className="numero" id="1.3">1.3 Informações Automáticas: </p>
 <p> Podemos coletar automaticamente informações sobre o seu dispositivo, navegador, endereço IP e padrões de uso do site.</p>

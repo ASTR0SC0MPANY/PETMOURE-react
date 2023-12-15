@@ -5,13 +5,9 @@
     font-family: "Reem Kufi", sans-serif !important;
   }
 
-  img {
-    width: 800px;
+  .home-banner-container img{
+    width: 1000px;
     height: auto;
-  }
-
-  img .img-animals{
-    margin-top: 600px;
   }
 
   .App {
@@ -29,7 +25,10 @@
   .home-banner-container {
     position: relative;
     display: flex;
+    justify-content: center;
     padding-top: 3rem;
+    width: 100vw;
+    height: auto;
   }
   .home-bannerImage-container {
     position: absolute;
@@ -319,6 +318,12 @@
     .about-section-container {
       flex-direction: column;
     }
+
+    .about-section-container img{
+      width: 1000px;
+      height: auto;
+    }
+
     .home-image-section,
     .about-section-image-container {
       width: 100%;

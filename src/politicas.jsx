@@ -77,9 +77,131 @@ function Politicas(){
             </div>
 
             <div className="informes-texto" id="processo-devolucao-ou-troca">
-                
+                <div className="titulo">
+
+                <h3 className="">3. </h3>
+                <h3>Processo de Devolução e Troca</h3>
+
+                </div>
+
+                <div className="informes">
+
+                <p className="numero" id="3.1">3.1 Notificação: </p>
+                <p>Entre em contato conosco através do nosso serviço de atendimento ao cliente para notificar sobre a intenção de devolução ou troca.</p>
+
+                </div>
+
+                <div className="informes">
+
+                <p className="numero" id="3.2">3.2 instruções: </p>
+                <p>Forneceremos instruções sobre como proceder com a devolução ou troca.</p>
+
+                </div>
+
             </div>
 
+            <div className="informes-texto" id="custos">
+
+            <div className="titulo">
+
+                <h3 className="">4. </h3>
+                <h3>Custos de Devolução e Troca</h3>
+
+            </div>
+
+            <div className="informes">
+
+                <p className="numero" id="4.1">4.1 Devolução de Produto com Defeito: </p>
+                <p> Se o produto estiver defeituoso ou fora das especificações, cobriremos os custos de devolução.</p>
+
+            </div>
+
+            <div className="informes">
+
+                <p className="numero" id="4.2">4.2 Outras Devoluções e Trocas: </p>
+                <p>Os custos de envio para devolução ou troca são de responsabilidade do cliente.</p>
+
+            </div>
+
+            </div>
+
+            <div className="informes-texto" id="reembolso">
+                <div className="titulo">
+
+                <h3  className="">5. </h3>
+                <h3>Reembolso</h3>
+
+                </div>
+
+                <div  className="informes">
+
+                <p  className="numero" id="5.1">5.1 Processamento </p>
+                <p>O reembolso será processado assim que recebermos e avaliarmos o produto devolvido.</p>
+
+                </div>
+
+                <div  className="informes">
+
+                <p  className="numero" id="5.2">5.2 Método de Reembolso: </p>
+                <p> O reembolso será feito no mesmo método de pagamento usado na compra.</p>
+
+            </div>
+
+            </div>
+
+            <div className="informes-texto" id="nao-elegiveis">
+
+            <div className="titulo">
+
+                <h3 className="">6. </h3>
+                <h3>Produtos não Elegíveis para Devolução ou Troca</h3>
+
+            </div>
+
+            <div className="informes">
+
+                <p className="numero" id="6.1">6.1 Produtos Personalizados: </p>
+                <p>Produtos feitos sob medida ou personalizados não são elegíveis para devolução ou troca, a menos que estejam defeituosos.</p>
+
+            </div>
+
+            </div>
+
+            <div className="informes-texto" id="danos-transporte">
+
+            <div className="titulo">
+
+                <h3 className="">7. </h3>
+                <h3>Danos Durante o Transporte</h3>
+
+            </div>
+
+            <div className="informes">
+
+                <p className="numero" id="7.1">7.1 Notificação: </p>
+                <p>Se o produto for danificado durante o transporte, notifique-nos imediatamente para podermos tomar as medidas adequadas.</p>
+
+            </div>
+
+            </div>
+
+            <div className="informes-texto" id="Contato">
+
+            <div className="titulo">
+
+                <h3 className="">8. </h3>
+                <h3>Contato</h3>
+
+            </div>
+
+            <div className="informes">
+
+                <p className="numero" id="8.1">8.1 Atendimento ao Cliente: </p>
+                <p>Se precisar de assistência ou tiver dúvidas sobre nossa política de devolução e troca, entre em contato com nosso serviço de atendimento ao cliente.</p>
+
+            </div>
+
+            </div>
 
 
         </div>
